@@ -9,8 +9,7 @@ public class Curso {
 
     public Curso() {}
 
-    public Curso(Integer id, String nome, String descricao, String areaDeAtuacao, Integer quantidadeTurma,
-                 Integer quantidadeAluno, double valorMensalidade, double valorTotal) {
+    public Curso(Integer id, String nome, String descricao, String areaDeAtuacao, Integer quantidadeTurma, Integer quantidadeAluno, double valorMensalidade, double valorTotal, String nomeImagem) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
@@ -19,6 +18,19 @@ public class Curso {
         this.quantidadeAluno = quantidadeAluno;
         this.valorMensalidade = valorMensalidade;
         this.valorTotal = valorTotal;
+        this.nomeImagem = nomeImagem;
+    }
+
+    //TEST
+    public Curso(String nome, String descricao, String areaDeAtuacao, Integer quantidadeTurma, Integer quantidadeAluno, double valorMensalidade, double valorTotal, String nomeImagem) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.areaDeAtuacao = areaDeAtuacao;
+        this.quantidadeTurma = quantidadeTurma;
+        this.quantidadeAluno = quantidadeAluno;
+        this.valorMensalidade = valorMensalidade;
+        this.valorTotal = valorTotal;
+        this.nomeImagem = nomeImagem;
     }
 
     @Id

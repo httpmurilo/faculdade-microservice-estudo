@@ -20,9 +20,9 @@ Ao pagar a mensalidade, será disponibilizado o acesso ao sistema de Portal EAD.
 
 Onde terá o painel de materias do curso, e outras informações.
 
-Arquitetura :
+### Arquitetura :
 
-API CORE : Spring boot
-API Pagamentos : Spring boot
-API Portal EAD: Spring boot
-Web: Front end em Angular 8
+- API CORE : Spring boot
+- API Pagamentos : Spring boot
+- API Portal EAD: Spring boot
+- Web: Front end em Angular 8
