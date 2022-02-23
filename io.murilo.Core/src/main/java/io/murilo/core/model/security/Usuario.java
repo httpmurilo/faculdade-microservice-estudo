@@ -9,10 +9,17 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(Integer id, String login, String senha) {
+    public Usuario(Integer id, String login, String senha, boolean admin) {
         this.id = id;
         this.login = login;
         this.senha = senha;
+        this.admin = admin;
+    }
+
+    public Usuario(String login, String senha, boolean admin) {
+        this.login = login;
+        this.senha = senha;
+        this.admin = admin;
     }
 
     @Id
@@ -20,6 +27,16 @@ public class Usuario {
     private Integer id;
     private String login;
     private String senha;
+
+    public boolean isAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
+    }
+
+    private boolean admin;
 
     public Integer getId() {
         return id;

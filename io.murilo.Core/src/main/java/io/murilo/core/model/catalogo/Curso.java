@@ -9,7 +9,9 @@ public class Curso {
 
     public Curso() {}
 
-    public Curso(Integer id, String nome, String descricao, String areaDeAtuacao, Integer quantidadeTurma, Integer quantidadeAluno, double valorMensalidade, double valorTotal, String nomeImagem) {
+    public Curso(Integer id, String nome, String descricao, String areaDeAtuacao, Integer quantidadeTurma,
+                 Integer quantidadeAluno, double valorMensalidade, double valorTotal, String nomeImagem,
+                 TipoCurso tipoCurso) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
@@ -19,10 +21,12 @@ public class Curso {
         this.valorMensalidade = valorMensalidade;
         this.valorTotal = valorTotal;
         this.nomeImagem = nomeImagem;
+        this.tipoCurso = tipoCurso;
     }
 
     //TEST
-    public Curso(String nome, String descricao, String areaDeAtuacao, Integer quantidadeTurma, Integer quantidadeAluno, double valorMensalidade, double valorTotal, String nomeImagem) {
+    public Curso(String nome, String descricao, String areaDeAtuacao, Integer quantidadeTurma, Integer quantidadeAluno,
+                 double valorMensalidade, double valorTotal, String nomeImagem, TipoCurso tipoCurso) {
         this.nome = nome;
         this.descricao = descricao;
         this.areaDeAtuacao = areaDeAtuacao;
@@ -31,6 +35,7 @@ public class Curso {
         this.valorMensalidade = valorMensalidade;
         this.valorTotal = valorTotal;
         this.nomeImagem = nomeImagem;
+        this.tipoCurso = tipoCurso;
     }
 
     @Id
@@ -47,6 +52,18 @@ public class Curso {
     private double valorMensalidade;
     private double valorTotal;
     private String nomeImagem;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "tipo_curso")
+    private TipoCurso tipoCurso;
+
+    public TipoCurso getTipoCurso() {
+        return tipoCurso;
+    }
+
+    public void setTipoCurso(TipoCurso tipoCurso) {
+        this.tipoCurso = tipoCurso;
+    }
 
     public String getNomeImagem() {
         return nomeImagem;

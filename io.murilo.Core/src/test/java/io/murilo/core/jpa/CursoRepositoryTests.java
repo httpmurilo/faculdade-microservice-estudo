@@ -1,15 +1,13 @@
 package io.murilo.core.jpa;
 
 import io.murilo.core.model.catalogo.Curso;
+import io.murilo.core.model.catalogo.TipoCurso;
 import io.murilo.core.persistence.repository.CursoRepository;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -28,7 +26,7 @@ public class CursoRepositoryTests {
     @Test
     public void Test_criarNovoCurso() {
         var curso = new Curso("Licenciatura em Filosofia", "A Filosofia procura estudar a essência da humanidade e a realidade em que vivemos. Refletir sobre o sentido das coisas e apresentar diferentes visões da realidade são atividades desempenhadas por profissionais desta área. Os filósofos são estudiosos e pensadores.",
-                "escolas", 5, 50, 250.00, 10.000, "filosofia.png");
+                "escolas", 5, 50, 250.00, 10.000, "filosofia.png", TipoCurso.GRADUCAO);
 
         var cursoSalvo = repository.save(curso);
         assertThat(cursoSalvo.getId()).isGreaterThan(0);
@@ -38,7 +36,7 @@ public class CursoRepositoryTests {
     @Test
     public void Test_editarCursoExistente() {
         var curso = new Curso(1,"Licenciatura em Filosofia Editado", "A Filosofia procura estudar a essência da humanidade e a realidade em que vivemos. Refletir sobre o sentido das coisas e apresentar diferentes visões da realidade são atividades desempenhadas por profissionais desta área. Os filósofos são estudiosos e pensadores.",
-                "escolas", 5, 50, 250.00, 10.000, "filosofia.png");
+                "escolas", 5, 50, 250.00, 10.000, "filosofia.png", TipoCurso.GRADUCAO);
 
         var cursoSalvo = repository.save(curso);
         assertThat(cursoSalvo.getId()).isGreaterThan(0);
@@ -73,7 +71,7 @@ public class CursoRepositoryTests {
 
     private Integer retornarIdUsuarioCriado() {
         var curso = new Curso("Licenciatura em Filosofia", "A Filosofia procura estudar a essência da humanidade e a realidade em que vivemos. Refletir sobre o sentido das coisas e apresentar diferentes visões da realidade são atividades desempenhadas por profissionais desta área. Os filósofos são estudiosos e pensadores.",
-                "escolas", 5, 50, 250.00, 10.000, "filosofia.png");
+                "escolas", 5, 50, 250.00, 10.000, "filosofia.png", TipoCurso.GRADUCAO);
 
         var cursoSalvo = repository.save(curso);
         return cursoSalvo.getId();
