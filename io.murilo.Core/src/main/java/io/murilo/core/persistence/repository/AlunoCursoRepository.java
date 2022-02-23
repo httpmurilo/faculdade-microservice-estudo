@@ -1,4 +1,7 @@
 package io.murilo.core.persistence.repository;
 
-public class AlunoCursoRepository {
+import io.murilo.core.model.seletivo.AlunoCurso;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface AlunoCursoRepository extends JpaRepository<AlunoCurso, Integer> {
 }

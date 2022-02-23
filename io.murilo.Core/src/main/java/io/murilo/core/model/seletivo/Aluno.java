@@ -95,7 +95,7 @@ public class Aluno {
             joinColumns =
                     { @JoinColumn(name = "aluno_id", referencedColumnName = "id") },
             inverseJoinColumns =
-                    { @JoinColumn(name = "workstation_id", referencedColumnName = "id") })
+                    { @JoinColumn(name = "usuario_id", referencedColumnName = "id") })
     private Usuario usuario;
 
     //MUITOS ALUNOS PODEM TER MUITOS CURSOS
