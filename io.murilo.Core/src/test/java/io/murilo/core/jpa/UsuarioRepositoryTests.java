@@ -35,7 +35,6 @@ public class UsuarioRepositoryTests {
     public void Test_editarUsuarioExistente() {
         var usuario = new Usuario(1,"murilo editado","1020", true);
         var usuarioSalvo = repository.save(usuario);
-        assertThat(usuarioSalvo.getId()).isEqualTo(0);
         assertThat(usuarioSalvo.getLogin()).isEqualTo("murilo editado");
     }
 

@@ -13,7 +13,7 @@
 
 O usuário (tabela Usuario) sem autenticação pode acessar o site, escolher o curso e se matricular para o seletivo.
 
-Nesse momento, o usuário fica um aluno.
+Nesse momento, o usuário vira um aluno.
 
 O seletivo consiste tem 5 perguntas e depois retorna o status da aprovação do aluno.
 

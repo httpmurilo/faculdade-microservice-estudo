@@ -1,5 +1,7 @@
 package io.murilo.core.model.security;
 
+import io.murilo.core.model.seletivo.Aluno;
+
 import javax.persistence.*;
 
 @Entity
@@ -27,6 +29,21 @@ public class Usuario {
     private Integer id;
     private String login;
     private String senha;
+
+    //UM USUARIO PODE TER UM ALUNO
+    // EVITAR O USO DE VALORES NULO PARA A COLUNA PARA RELACIONAMENTOS OPCIONAIS
+    @OneToOne(mappedBy = "usuario")
+    private Aluno aluno;
+
+    public Aluno getAluno() {
+        return aluno;
+    }
+
+    public void setAluno(Aluno aluno) {
+        this.aluno = aluno;
+    }
+
+
 
     public boolean isAdmin() {
         return admin;
