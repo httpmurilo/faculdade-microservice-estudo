@@ -3,6 +3,7 @@ package io.murilo.core.fileStorage;
 import io.murilo.core.exceptions.GenericExceptionError;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
+import org.springframework.stereotype.Service;
 import org.springframework.util.FileSystemUtils;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -14,9 +15,10 @@ import java.nio.file.Paths;
 import java.util.Objects;
 import java.util.stream.Stream;
 
+@Service
 public class FileStorageServiceImpl implements FileStorageService {
 
-    protected Path root = Paths.get("resources/curso-thumbl");
+    protected Path root = Paths.get("uploads");
 
     @Override
     public void init() {

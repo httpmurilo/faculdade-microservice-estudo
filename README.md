@@ -9,6 +9,7 @@
 - Portal EAD. API SEPARADA.
 - Pagamento - API SEPARADA.
 - Portal administrativo.
+- API Service Discovery (Eureka).
 
 O usuário sem autenticação pode acessar o site, escolher o curso e se matricular para o seletivo.
 
@@ -22,7 +23,8 @@ Onde terá o painel de materias do curso, e outras informações.
 
 ### Arquitetura :
 
-- API CORE : Spring boot
-- API Pagamentos : Spring boot
+- API CORE: Spring boot
+- API Pagamentos: Spring boot
 - API Portal EAD: Spring boot
 - Web: Front end em Angular 8
+- API Eureka: Descoberta de clients.

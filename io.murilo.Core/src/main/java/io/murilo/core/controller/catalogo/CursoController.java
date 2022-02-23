@@ -51,7 +51,6 @@ public class CursoController {
             var fileName = file.getOriginalFilename();
             curso.setNomeImagem(fileName);
             fileStorageService.save(file);
-
         } else {
             curso.setNomeImagem(null);
         }
