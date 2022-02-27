@@ -11,16 +11,30 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(Integer id, String login, String senha, boolean admin) {
+    public Usuario(Integer id, String login, String senha, String nome, String sobrenome, Aluno aluno, boolean admin) {
         this.id = id;
         this.login = login;
         this.senha = senha;
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.aluno = aluno;
         this.admin = admin;
     }
 
-    public Usuario(String login, String senha, boolean admin) {
+    public Usuario(String login, String senha, String nome, String sobrenome, Aluno aluno, boolean admin) {
         this.login = login;
         this.senha = senha;
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.aluno = aluno;
+        this.admin = admin;
+    }
+
+    public Usuario(String login, String senha, String nome, String sobrenome, boolean admin) {
+        this.login = login;
+        this.senha = senha;
+        this.nome = nome;
+        this.sobrenome = sobrenome;
         this.admin = admin;
     }
 
@@ -29,6 +43,24 @@ public class Usuario {
     private Integer id;
     private String login;
     private String senha;
+    private String nome;
+    private String sobrenome;
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getSobrenome() {
+        return sobrenome;
+    }
+
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
+    }
 
     //UM USUARIO PODE TER UM ALUNO
     // EVITAR O USO DE VALORES NULO PARA A COLUNA PARA RELACIONAMENTOS OPCIONAIS

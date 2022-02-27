@@ -1,5 +1,6 @@
 package io.murilo.core.model.seletivo;
 
+import io.murilo.core.model.catalogo.Curso;
 import io.murilo.core.model.security.Usuario;
 
 import javax.persistence.*;
@@ -100,15 +101,10 @@ public class Aluno {
 
     //MUITOS ALUNOS PODEM TER MUITOS CURSOS
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinTable(
-            name = "tb_alunoVincCurso",
-            joinColumns = @JoinColumn(name = "aluno_id"),
-            inverseJoinColumns = @JoinColumn(name = "alunoCurso_id")
-    )
-    private Set<AlunoCurso> alunoVincCurso = new HashSet<>();
+    private Set<Curso> cursos = new HashSet<>();
 
-    public void adicionarCurso(AlunoCurso alunoCurso) {
-        this.alunoVincCurso.add(alunoCurso);
+    public void adicionarCurso(Curso alunoCurso) {
+        this.cursos.add(alunoCurso);
         alunoCurso.getAlunos().add(this);
     }
 }

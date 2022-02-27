@@ -11,9 +11,9 @@
 - Portal administrativo.
 - API Service Discovery (Eureka).
 
-O usuário (tabela Usuario) sem autenticação pode acessar o site, escolher o curso e se matricular para o seletivo.
+O usuário sem autenticação pode acessar o site, escolher o curso e se matricular para o seletivo, a partir desse momento é criado um objeto da entidade Usuario.
 
-Nesse momento, o usuário vira um aluno.
+Ao finalizar o seletivo, o usuario vira aluno.
 
 O seletivo consiste tem 5 perguntas e depois retorna o status da aprovação do aluno.
 

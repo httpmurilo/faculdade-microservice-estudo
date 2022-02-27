@@ -1,6 +1,9 @@
 package io.murilo.core.model.catalogo;
 
+import io.murilo.core.model.seletivo.Aluno;
+
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -56,6 +59,20 @@ public class Curso {
     @Enumerated(EnumType.STRING)
     @Column(name = "tipo_curso")
     private TipoCurso tipoCurso;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name="tb_vinc_usuario_curso",
+            joinColumns={@JoinColumn(name="curso_id")},
+            inverseJoinColumns={@JoinColumn(name="aluno_id")})
+    private Set<Aluno> alunos = new HashSet<>();
+
+    public Set<Aluno> getAlunos() {
+        return alunos;
+    }
+
+    public void setAlunos(Set<Aluno> alunos) {
+        this.alunos = alunos;
+    }
 
     public TipoCurso getTipoCurso() {
         return tipoCurso;

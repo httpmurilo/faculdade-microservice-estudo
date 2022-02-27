@@ -1,8 +1,10 @@
 package io.murilo.core.controller.core;
 
+import com.netflix.discovery.converters.Auto;
 import io.murilo.core.exceptions.GenericExceptionError;
 import io.murilo.core.model.catalogo.Curso;
 import io.murilo.core.model.security.Usuario;
+import io.murilo.core.model.seletivo.UsuarioVincCurso;
 import io.murilo.core.persistence.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,6 +21,8 @@ public class UsuarioController {
 
     @Autowired
     private UsuarioRepository repository;
+    @Autowired
+    private UsuarioVincCurso usuarioVincCurso;
 
     @GetMapping("/")
     public ResponseEntity<List<Usuario>> getAll() {
@@ -55,4 +59,8 @@ public class UsuarioController {
         return ResponseEntity.ok("Usuario deletado com sucesso");
     }
 
+    @PostMapping("/{id}/curso")
+    public ResponseEntity<String> postUser(@PathVariable Integer id, @RequestBody UsuarioVincCurso vincCurso) {
+
+    }
 }

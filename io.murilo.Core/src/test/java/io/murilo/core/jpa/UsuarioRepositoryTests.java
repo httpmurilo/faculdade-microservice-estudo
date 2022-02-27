@@ -25,7 +25,7 @@ public class UsuarioRepositoryTests {
 
     @Test
     public void Test_criarNovoUsuario() {
-        var usuario = new Usuario("murilo","1020", true);
+        var usuario = new Usuario("murilo","1020","murilo","saldanha", true);
         var usuarioSalvo = repository.save(usuario);
         assertThat(usuarioSalvo.getId()).isGreaterThan(0);
         assertThat(usuarioSalvo.getLogin()).isNotEmpty();
@@ -33,7 +33,7 @@ public class UsuarioRepositoryTests {
 
     @Test
     public void Test_editarUsuarioExistente() {
-        var usuario = new Usuario(1,"murilo editado","1020", true);
+        var usuario = new Usuario("murilo","1020","murilo","saldanha", true);
         var usuarioSalvo = repository.save(usuario);
         assertThat(usuarioSalvo.getLogin()).isEqualTo("murilo editado");
     }
@@ -65,7 +65,7 @@ public class UsuarioRepositoryTests {
     }
 
     private Integer retornarIdUsuarioCriado() {
-        var usuario = new Usuario("murilo","1020", true);
+        var usuario = new Usuario("murilo","1020","murilo","saldanha", true);
         var usuarioSalvo = repository.save(usuario);
         return usuarioSalvo.getId();
     }
