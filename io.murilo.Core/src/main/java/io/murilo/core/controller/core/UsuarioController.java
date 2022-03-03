@@ -21,8 +21,6 @@ public class UsuarioController {
 
     @Autowired
     private UsuarioRepository repository;
-    @Autowired
-    private UsuarioVincCurso usuarioVincCurso;
 
     @GetMapping("/")
     public ResponseEntity<List<Usuario>> getAll() {
@@ -57,10 +55,5 @@ public class UsuarioController {
     public ResponseEntity<String> delete(@PathVariable Integer id) {
         repository.deleteById(id);
         return ResponseEntity.ok("Usuario deletado com sucesso");
-    }
-
-    @PostMapping("/{id}/curso")
-    public ResponseEntity<String> postUser(@PathVariable Integer id, @RequestBody UsuarioVincCurso vincCurso) {
-
     }
 }

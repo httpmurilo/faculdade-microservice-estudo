@@ -46,8 +46,6 @@ public class Curso {
     private Integer id;
     private String nome;
 
-    //long text mysql
-    @Lob
     private String descricao;
     private String areaDeAtuacao;
     private Integer quantidadeTurma;
