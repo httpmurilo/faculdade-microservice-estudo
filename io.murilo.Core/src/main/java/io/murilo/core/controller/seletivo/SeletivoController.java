@@ -64,8 +64,10 @@ public class SeletivoController {
     public UsuarioVincCurso atualizarStatusParaEncerrado(@PathVariable Integer id) {
         return usuarioVIncCursoRepository.findById(id)
                 .map(vinculoExistente -> {
-                    vinculo
-                })
+                    vinculoExistente.setStatusSeletivo(StatusSeletivo.FINALIZADO);
+                    usuarioVIncCursoRepository.save(vinculoExistente);
+                    return vinculoExistente;
+                }).orElseThrow(() -> new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Erro ao editar o status do seletivo"));
     }
 
 }
