@@ -11,9 +11,7 @@
 - Portal administrativo.
 - API Service Discovery (Eureka).
 
-O usuário sem autenticação pode acessar o site, escolher o curso e se matricular para o seletivo, a partir desse momento é criado um objeto da entidade Usuario.
-
-Ao finalizar o seletivo, o usuario vira aluno.
+O usuário sem autenticação pode acessar o site, escolher o curso, nesse momento é criado um novo usuário no sistema, feito isso ele pode se matricular para o seletivo, a partir desse momento é criado um objeto da entidade Aluno.
 
 O seletivo consiste tem 5 perguntas e depois retorna o status da aprovação do aluno.
 

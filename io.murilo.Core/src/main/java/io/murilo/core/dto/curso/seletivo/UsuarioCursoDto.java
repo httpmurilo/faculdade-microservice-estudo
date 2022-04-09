@@ -8,16 +8,7 @@ public class UsuarioCursoDto {
     public Integer getUsuarioId() {
         return usuarioId;
     }
-
-    public void setUsuarioId(Integer usuarioId) {
-        this.usuarioId = usuarioId;
-    }
-
     public Integer getCursoId() {
         return cursoId;
-    }
-
-    public void setCursoId(Integer cursoId) {
-        this.cursoId = cursoId;
     }
 }

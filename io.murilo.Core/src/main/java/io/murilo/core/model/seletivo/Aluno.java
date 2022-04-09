@@ -31,6 +31,12 @@ public class Aluno {
         this.usuario = usuario;
     }
 
+    public Aluno(String nome, String sobrenome, String email) {
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.email = email;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
@@ -38,8 +44,17 @@ public class Aluno {
     private String sobrenome;
     private Boolean ativo;
     private Boolean vinculadoCurso;
+    private String email;
 
 
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public Integer getId() {
         return id;

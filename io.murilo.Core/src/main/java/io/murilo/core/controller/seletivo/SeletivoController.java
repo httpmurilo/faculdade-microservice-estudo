@@ -29,7 +29,7 @@ public class SeletivoController {
     private UsuarioVIncCursoRepository usuarioVIncCursoRepository;
 
     @PostMapping("/")
-    public ResponseEntity<String> criarNovoSeletivoComUserCadastrado(@RequestBody UsuarioCursoDto usuarioCursoDto) {
+    public ResponseEntity<String> criarNovoSeletivoComUser(@RequestBody UsuarioCursoDto usuarioCursoDto) {
 
        var usuarioCadastrado = usuarioRepository.findById(usuarioCursoDto.getUsuarioId()).get();
 
@@ -69,5 +69,4 @@ public class SeletivoController {
                     return vinculoExistente;
                 }).orElseThrow(() -> new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Erro ao editar o status do seletivo"));
     }
-
 }
