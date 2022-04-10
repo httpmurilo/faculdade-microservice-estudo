@@ -51,7 +51,6 @@ public class SeletivoController {
         usuarioVIncCursoRepository.save(usuarioVincCurso);
 
         return ResponseEntity.ok("Criado com sucesso");
-
     }
 
     @GetMapping("/{usuarioId}")

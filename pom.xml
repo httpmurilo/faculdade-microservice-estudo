@@ -10,6 +10,7 @@
   <modules>
   	<module>io.murilo.Core</module>
   	<module>io.murilo.Eureka</module>
+    <module>io.murilo.Ead</module>
   </modules>
   
 </project>
