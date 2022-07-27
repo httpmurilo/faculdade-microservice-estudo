@@ -11,6 +11,8 @@
   	<module>io.murilo.Core</module>
   	<module>io.murilo.Eureka</module>
     <module>io.murilo.Ead</module>
+    <module>io.murilo.Oauth2</module>
+    <module>io.murilo.Financeiro</module>
   </modules>
   
 </project>

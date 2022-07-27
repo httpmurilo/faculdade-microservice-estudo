@@ -47,7 +47,7 @@ public class SeletivoController {
         alunoParaSalvamento.adicionarCurso(curso);
         alunoRepository.save(alunoParaSalvamento);
 
-        var usuarioVincCurso =new UsuarioVincCurso(usuarioCadastrado.getId(), curso.getId(), alunoParaSalvamento.getId(), StatusSeletivo.ANDAMENTO);
+        var usuarioVincCurso = new UsuarioVincCurso(usuarioCadastrado.getId(), curso.getId(), alunoParaSalvamento.getId(), StatusSeletivo.ANDAMENTO);
         usuarioVIncCursoRepository.save(usuarioVincCurso);
 
         return ResponseEntity.ok("Criado com sucesso");
