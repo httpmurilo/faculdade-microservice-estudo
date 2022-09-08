@@ -13,6 +13,7 @@
     <module>io.murilo.Ead</module>
     <module>io.murilo.Oauth2</module>
     <module>io.murilo.Financeiro</module>
+    <module>io.murilo.ApiGateway</module>
   </modules>
   
 </project>
